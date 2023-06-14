@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "gilroy";
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+    }
+
+    
+    .blob {
+        height: 250px;
+        background-color: white;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        background: linear-gradient(to right, aquamarine, mediumpurple);
+        animation: rotate 2s ease-in-out infinite;
+        /* z-index: -1; */
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          scale: 1 1.5;
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .main {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        backdrop-filter: blur(150px);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    
+    .face{
+        position:relative;
+    }
+    .eyes{
+        position: relative;
+        display:flex;
+    }
+    .eyes .eye{
+        width:150px;
+        height:150px;
+        background-color:#fff;
+        border-radius: 50%;
+        border:1px solid #333;
+        position:relative
+    }
+    .eyes .eye:before{
+        content:'';
+        position: absolute;
+        width:50px;
+        height:50px;
+        background-color:#26b9cb;
+        border-radius: 50%;
+        border:1px solid #333;
+        top:50%;
+        left:30px;
+        transform: translate(-50%, -50%)
+    }
+    .eyes .eye:after{
+        content:'';
+        position: absolute;
+        width:30px;
+        height:30px;
+        background-color:#0457a0;
+        border-radius: 50%;
+        top:40%;
+        left:10%
+    }
+    .eyelash1{
+        width:5px;
+        height:35px;
+        background-color: #000;
+        position: relative;
+        top:-186px;
+        left:70px;
+        border-radius:20px 20px 50% 50%;
+    }
+    .eyelash1:before{
+        content:'';
+        position:absolute;
+        width:5px;
+        height:35px;
+        background-color: #000;
+        top:16px;
+        left:-50px;
+        transform: rotate(-35deg);
+        border-radius:20px 20px 50% 50%;
+    }
+    .eyelash1:after{
+        content:'';
+        position:absolute;
+        width:5px;
+        height:35px;
+        background-color: #000;
+        top:13px;
+        left:50px;
+        transform: rotate(35deg);
+        border-radius:20px 20px 50% 50%;
+    }
+    .eyelash2{
+        width:5px;
+        height:35px;
+        background-color: #000;
+        position: relative;
+        top:-222px;
+        left:220px;
+        border-radius:20px 20px 50% 50%;
+    }
+    .eyelash2:before{
+        content:'';
+        position:absolute;
+        width:5px;
+        height:35px;
+        background-color: #000;
+        top:18px;
+        left:-50px;
+        transform: rotate(-35deg);
+        border-radius:20px 20px 50% 50%;
+    }
+    .eyelash2:after{
+        content:'';
+        position:absolute;
+        width:5px;
+        height:35px;
+        background-color: #000;
+        top:13px;
+        left:50px;
+        transform: rotate(35deg);
+        border-radius:20px 20px 50% 50%;
+    }
+    .nose{
+        width:50px;
+        height:80px;
+        border:1px solid #555;
+        background-color: #f7e948;
+        border-radius: 50%;
+        position: relative;
+        top:-150px;
+        left:120px;
+    }
+    .nose:before{
+        content:'';
+        position: absolute;
+        width:30px;
+        height:30px;
+    
+        background-color: #f7e948;
+        border-radius:40%;
+        top:65px;
+        left:7px;
+    }
+    .nose:after{
+        content:'';
+        position: absolute;
+        width:13px;
+        height:13px;
+        background-color: #aead0d;
+        border-radius:40%;
+        top:-60px;
+        left:-160px;
+    }
+    .burger1{
+        position: relative;
+        background-color: #ed7f8c;
+        width:15px;
+        height:15px;
+        border-radius: 50%;
+        top:-100px;
+        left:20px;
+    }
+    .burger1:before{
+        content:'';
+        position: absolute;
+        background-color: #ed7f8c;
+        width:15px;
+        height:15px;
+        border-radius: 50%;
+        top:-30px;
+        left:-30px;
+    }
+    .burger1:after{
+        content:'';
+        position: absolute;
+        background-color: #ed7f8c;
+        width:15px;
+        height:15px;
+        border-radius: 50%;
+        top:-20px;
+        left:30px;
+    }
+    .burger2{
+        position: relative;
+        background-color: #ed7f8c;
+        width:15px;
+        height:15px;
+        border-radius: 50%;
+        top:-100px;
+        left:270px;
+    }
+    .burger2:before{
+        content:'';
+        position: absolute;
+        background-color: #ed7f8c;
+        width:15px;
+        height:15px;
+        border-radius: 50%;
+        top:-20px;
+        left:-30px;
+    }
+    .burger2:after{
+        content:'';
+        position: absolute;
+        background-color: #ed7f8c;
+        width:15px;
+        height:15px;
+        border-radius: 50%;
+        top:-30px;
+        left:30px;
+    }
+    .mouth{
+        position: relative;
+        width:140px;
+        height:40px;
+        border-top:3px solid #333;
+        border-radius: 50%;
+        transform: rotate(-8deg);
+        top:-50px;
+        left:80px;
+        transition-duration: .5s
+    }
+    .face:hover .mouth{
+        border-top:0;
+        border-bottom:3px solid #333;
+        top:-80px;
+        transform: rotate(0);
+    }
+    .mouth:before{
+        content:'';
+        position: absolute;
+        width:35px;
+        height: 33px;
+        border:2px solid #333;
+        background-color: #fff;
+        transform: rotate(8deg);
+        left:30px;
+        top:-4px;
+    }
+    .face:hover .mouth:before{
+        top:40px;
+        transform: rotate(0);
+    }
+    .mouth:after{
+        content:'';
+        position: absolute;
+        width:35px;
+        height: 35px;
+        border:2px solid #333;
+        background-color: #fff;
+        transform: rotate(8deg);
+        left:80px;
+        top:1px;
+    }
+    .face:hover .mouth:after{
+        top:40px;
+        transform: rotate(0);
+    }
+    .mouth2{
+        
+        position: relative;
+        top:-94px;
+        left:90px;
+    }
+    .mouth2:before{
+        content:'';
+        position: absolute;
+        width:80px;
+        height: 30px;
+        border-bottom:2px solid #ed7f8c;
+        border-radius: 50%;
+        top:80px;
+        left:-20px;
+    }
+    .mouth2:after{
+        content:'';
+        position: absolute;
+        width:70px;
+        height: 30px;
+        border-bottom:2px solid #ed7f8c;
+        border-radius: 50%;
+        top:80px;
+        left:65px;
+    }
+    .patch1{
+        position: relative;
+        width:40px;
+        height: 50px;
+        /* background-color: #aead0d; */
+        border-radius: 50% 80% 40% 50% / 90% 70% 90% 60%;
+        transform: rotate(10deg);
+        top:-100px;
+        left:-30px;
+    }
+    .patch1:before{
+        content:'';
+        position: absolute;
+        width:20px;
+        height: 20px;
+        background-color: #aead0d;
+        border-radius: 60% 80% 50% 60% / 90% 70% 90% 60%;
+        top:-30px;
+        left:-20px;
+    }
+    .patch1:after{
+        content:'';
+        position: absolute;
+        width:20px;
+        height: 20px;
+        background-color: #aead0d;
+        border-radius: 60% 80% 50% 60% / 90% 70% 90% 60%;
+        transform: rotate(10deg);
+        top:-320px;
+        left:-50px;
+    }
+    .patch2{
+        position: relative;
+        width:45px;
+        height: 55px;
+        background-color: #aead0d;
+        border-radius: 60% 80% 50% 50% / 90% 80% 90% 70%;
+        transform: rotate(50deg);
+        top:-160px;
+        left:280px;
+    }
+    .patch2:before{
+        content:'';
+        position: absolute;
+        width:20px;
+        height: 20px;
+        background-color: #aead0d;
+        border-radius: 60% 80% 50% 60% / 90% 70% 90% 60%;
+        top:90px;
+        left:20px;
+    }
+    .patch2:after{
+        content:'';
+        position: absolute;
+        width:15px;
+        height: 15px;
+        background-color: #aead0d;
+        border-radius: 60% 80% 50% 60% / 90% 70% 90% 60%;
+        top:-210px;
+        left:-250px;
+    }</style>
+</head>
+<body>
+    <div id="main">
+        <h1 id="m" class="a">M</h1>
+        <h1 id="ii" class="opa">I</h1>
+        <h1 id="ss" class="opa">S</h1>
+        <h1 id="s" class="a">S</h1>
+        <h1 id="g" class="a">G</h1>
+        <h1 id="u" class="opa">U</h1>
+        <h1 id="i" class="a">I</h1>
+        <h1 id="d" class="opa">D</h1>
+        <h1 id="e" class="a">E</h1>
+        <h1 id="dd" class="opa">D</h1>
+        <div id="circle"></div>
+        <div id="circle2"></div>
+        <div id="page2">
+            <div id="nav">
+                <h2 class="ab">MISSGUIDED</h2>
+                <div id="icons">
+                    <i class="ri-menu-line ab"></i>
+                    <i id="space" class="ri-search-line ab"></i>
+                    <i class="ri-heart-3-line ab"></i>
+                    <i class="ri-shopping-bag-line ab"></i>
+                    <h4 class="ab">A</h4>
+                    <div class="ab" id="ring"></div>
+                </div>
+            </div>
+            <div id="list">
+                <h4>New In</h4>
+                <h4>Dresses</h4>
+                <h4>Tops</h4>
+                <h4>Clothing</h4>
+                <h4>Shoes</h4>
+                <h4>Accessories</h4>
+                <h4>Sale</h4>
+            </div>
+            <div id="photo1">
+                <img src="https://img.freepik.com/free-photo/two-young-beautiful-smiling-girls-trendy-summer-light-pink-dresses-sexy-carefree-women-posing-positive-models-having-fun_158538-5088.jpg?w=826&t=st=1671814727~exp=1671815327~hmac=d70d7b75d764a839f61f8842fa31bf2bced90603b8835af047ec9367702935af" alt="">
+            </div>
+            <div id="photo2">
+                <img id="photo2" src="https://img.freepik.com/free-photo/portrait-young-beautiful-smiling-girl-trendy-summer-light-pink-dress-sexy-carefree-woman-posing-positive-model-having-fun-thinking_158538-5147.jpg?t=st=1671814727~exp=1671815327~hmac=634014496c023eec3851e7396e27accea68e6b9857b2e112d51b5ccfe288d1e3" alt="">
+            </div>
+            <div id="add">
+                <div id="feel"><h1>F</h1><h1>E</h1><h1>E</h1><h1>L</h1></div>
+                <div id="ings"><h1>I</h1><h1>N</h1><h1>G</h1><h1>S</h1><h1>?</h1></div>
+            </div>
+            <div id="btm">
+                <div id="text"><p> We Are Always Keen To Hear From <br> Other Creative Minds</p></div>
+                <div class="bmt" id="left"><i class="ri-arrow-drop-left-line ri-2x"></i><h4> <span id="jao">01 </span>  <span id="aoo">02  </span>/04</h4><i id="click" class="ri-arrow-drop-right-line ri-2x"></i></div>
+                <div class="bmt" id="right"><h4>Shop Now<i class="ri-arrow-right-line"></i></h4></div>
+            </div>
+            <div id="circle3"></div>
+                <div class="ll" id="un">
+                    <h4>Unlimited Next</h4>
+                    <h4>Day Delivery</h4>
+                    <p>For A Year</p>
+                </div>
+                <div class="ll" id="new">
+                    <h4>New In From CB</h4>
+                    <p>Shop Now</p>
+                </div>
+                <div class="ll" id="off">
+                    <h4>20% Of For First </h4>
+                    <h4>App Order</h4>
+                    <p>Click Here</p>
+                </div>
+            <div id="fti">
+                <i class="ri-facebook-circle-fill"></i>
+                <i class="ri-twitter-fill"></i>
+                <i class="ri-instagram-fill"></i>
+            </div>
+            <div id="circle4"></div>
+            <div id="photo3">
+                <img src="https://images.unsplash.com/photo-1524504542391-127872011665?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+            </div>
+            <div id="photo4">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+            </div>
+            <div id="circle5"></div>
+            <div id="add2">
+                <div id="ba"><h1>B</h1><h1>A</h1></div>
+                <div id="bes"><h1>B</h1><h1>E</h1><h1>S</h1></div>
+            </div>
+            <div id="text2">
+                <h1>WHO <br> BRUNCH</h1>
+            </div>
+            <img id="how" src="./HOW.png" alt="">
+            <img id="effort" src="./effort.png" alt="">
+            
+        </div>
+    </div>
+    <div id="cursor"></div>
+    <div class="blob"></div>
+        <section class="main">
+          <div class="face">
+            <div class="eyes">
+              <div class="eye"></div>
+              <div class="eye"></div>
+            </div>
+            <div class="eyelash1"></div>
+            <div class="eyelash2"></div>
+            <div class="nose"></div>
+            <div class="burger1"></div>
+            <div class="burger2"></div>
+            <div class="mouth"></div>
+            <div class="mouth2"></div>
+            <div class="patch1"></div>
+            <div class="patch2"></div>
+          </div>
+        </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script.js"></script>
+    <script>const blob = document.querySelector(".blob");
+        window.addEventListener("pointermove", (e) => {
+          const { clientX, clientY } = e;
+          console.log(clientX, clientY);
+          // blob.style.left=`${clientX}px`;
+          // blob.style.top=`${clientY}px`;
+          blob.animate(
+            {
+              left: `${clientX}px`,
+              top: `${clientY}px`,
+            },
+            { duration: 3000, fill: "forwards" }
+          );
+        });
+  
+        document.querySelector("body").addEventListener("mousemove", eyeball);
+        function eyeball() {
+          var eye = document.querySelectorAll(".eye");
+          eye.forEach(function (eye) {
+            let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+            let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+            let radian = Math.atan2(event.pageX - x, event.pageY - y);
+            let rot = radian * (180 / Math.PI) * -1 + 270;
+            eye.style.transform = "rotate(" + rot + "deg)";
+          });
+        }
+      
+      </script>
+</body>
+</html>
